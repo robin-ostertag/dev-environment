@@ -1,0 +1,1 @@
+alias boottime='systeminfo | grep "Systemstartzeit"'
