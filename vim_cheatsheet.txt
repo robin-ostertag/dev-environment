@@ -1,0 +1,22 @@
+enter insert mode: (uppercase letter alternative: SHIFT + lowercase letter)
+i (start editing left from cursor)
+I (start editing at the start of the line)
+a (start editing left from cursor)
+A (start editing at the end of the line)
+
+exit insert mode:
+<esc> (enter normal mode)
+
+save the current buffer (file)
+:w
+
+how to quit vim
+:q
+
+or save and quit:
+ZZ (or shift + z + z, same thing)
+:wq
+
+how to exiting recording (displays @recording at the bottom when accidently entered)
+q
+
