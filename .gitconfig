@@ -1,35 +1,44 @@
+[core]
+	autocrlf = false
+	pager = less -FRX
+	editor = vim
+[push]
+  autoSetupRemote = true
 [alias]
 	ss = status --short
+	sw = switch
 	ssufa = status --short --untracked-files=all
-	last = log -1 --oneline
 	l = log -7 --graph --pretty=format:\"%C(auto)%h%d%Creset %s %C(green)%cn%Creset %C(cyan)(%cr)%Creset\"
+	last = l -1
 	co = checkout
 	c = commit
+	b = branch
+	ps = push
+	pl = pull
+	branches = "!git branch && git branch --remote"
 	cm = commit --message
-	p = push
-	poh = push origin HEAD
 	aa = add --all
+	aac = "!git add --all && git commit"
+	aacp = "!git add --all && git commit && git push"
+	aacpfwl = "!git add --all && git commit && git push --force-with-lease"
 	wt = worktree
 	fpa = fetch --prune --all
 	pfwl = push --force-with-lease
-	pohfwl = push origin HEAD --force-with-lease
-	cane = commit --amend --no-edit
+	ca = commit --amend
 	aaca = "!git add --all && git commit --amend"
+	cane = commit --amend --no-edit
 	aacm = "!git add --all && git commit --message"
 	aacane = "!git add --all && git commit --amend --no-edit"
-	canepoh = "!git commit --amend --no-edit && git push origin HEAD"
-	canepohfwl = "!git commit --amend --no-edit && git push origin HEAD --force-with-lease"
-	aacanepohfwl = "!git add --all && git commit --amend --no-edit && git push origin HEAD --force-with-lease"
+	canep = "!git commit --amend --no-edit && git push"
+	canepfwl = "!git commit --amend --no-edit && git push --force-with-lease"
+	aacapfwl = "!git add --all && git commit --amend && git push --force-with-lease"
+	aacanepfwl = "!git add --all && git commit --amend --no-edit && git push --force-with-lease"
+	cp = "!git commit && git push"
+	aacp = "!git add -all && git commit && git push"
+	aacpfwl = "!git add -all && git commit && git push --force-with-lease"
 	wt = worktree
-	ca = commit --amend
 	co = checkout
 	smfe = submodule foreach
 	skipped = !git ls-files -v | grep \"^S\"
 	skip = update-index --skip-worktree
 	no-skip = update-index --no-skip-worktree
-	br = for-each-ref refs/remotes/ --sort=authorname --sort=-authordate --format="%(refname:short) %(authorname) (%(authordate:relative))"
-[core]
-	autocrlf = false
-	editor = vim
-[push]
-	autoSetupRemote = true
