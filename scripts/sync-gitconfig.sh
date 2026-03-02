@@ -20,5 +20,6 @@ git config --file "$PDE_GITCONFIG" --get-regexp '^alias\.' | while read -r key v
 	git config --global alias."$key" "$value"
 done
 
-echo "successfully synced .gitconfig"
+echo "successfully synced .gitconfig:"
+echo
 cat "$PDE_GITCONFIG"
