@@ -1,3 +1,3 @@
 # TODOs
 - add vscode keyboard shortcuts
-- add sync script for .bashrc
+- install.sh: more spacing for console log
