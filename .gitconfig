@@ -4,6 +4,8 @@
 	editor = vim
 [push]
   autoSetupRemote = true
+[pull]
+  rebase = true
 [alias]
 	ss = status --short
 	sw = switch
