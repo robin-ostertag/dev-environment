@@ -2,6 +2,6 @@
 
 cp .bashrc ~/.bashrc
 
-echo ".bashrc has been replaced with:"
-echo
+printf ".bashrc has been replaced with:\n"
 cat ~/.bashrc
+printf "\n\n"
