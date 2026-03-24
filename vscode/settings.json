@@ -2,5 +2,8 @@
     // show .git folder
     "files.exclude": {
         "**/.git": false
-    }
+    },
+    // default terminal
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+
 }
