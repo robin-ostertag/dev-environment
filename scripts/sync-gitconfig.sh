@@ -3,7 +3,7 @@
 PDE_GITCONFIG="$HOME/dev-environment/.gitconfig"
 
 # overide the entries for core and advice
-# Not a real migration. If a previous version of ribyns-PDE_GITCONFIG had values and are not deleted
+# Not a real migration. If a previous version of "<this_repo>/.gitconfig" had values and are not deleted
 # they wont be removed
 # new ones will be added
 # existing ones overidden
