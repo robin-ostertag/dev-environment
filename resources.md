@@ -5,10 +5,11 @@
 - Patterns of Enterprise Application Architecture
 - Clean Architecture
 
-# Refactoring
+# Refactoring & Architecture
 
 - [Martin Fowler Refactoring Catalog](https://refactoring.com/catalog/)
 - [Refactoring Guru](https://refactoring.guru/)
+- [Martin Fowler Enterprise Architecture Catalog](https://martinfowler.com/eaaCatalog/)
 
 # Azure
 
