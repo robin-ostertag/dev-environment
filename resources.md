@@ -1,6 +1,6 @@
-# A collection of my favourite resources.
+A collection of my favourite resources.
 
-# Architecture Books
+# Books
 
 - Patterns of Enterprise Application Architecture
 - Clean Architecture
