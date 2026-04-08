@@ -10,7 +10,6 @@ load_nvm() {
 }
 
 # load nvm when using node-y programs
-
 nvm() {
 	unset -f nvm
     unset -f node
