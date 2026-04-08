@@ -1,7 +1,7 @@
 alias boottime='systeminfo | grep "Systemstartzeit"'
 alias home='explorer "$(cygpath -w ~)"' # workaround for explorer ~ not working
 
-# lazy load nvm
+# lazy load nvm since it takes about 15s to load in git-bash on windows
 load_nvm() {
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm

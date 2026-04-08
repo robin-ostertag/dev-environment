@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source "scripts/utils.sh"
+
 # Auto-detect OS
 case "$(uname -s)" in
   Linux*)     detected_os="linux" ;;
@@ -8,7 +10,7 @@ case "$(uname -s)" in
   *)          detected_os="unknown" ;;
 esac
 
-echo "Detected OS: $detected_os"
+info "Detected OS: $detected_os"
 
 read -r -p "Use detected OS? (Y/n): " confirm
 
@@ -21,18 +23,26 @@ if [[ "$confirm" =~ ^[Nn]$ ]]; then
   case $choice in
     1) os="linux" ;;
     2) os="windows" ;;
-    *) echo "Invalid choice. Exiting."; exit 1 ;;
+    *) error "Invalid choice. Exiting."; exit 1 ;;
   esac
 else
   os="$detected_os"
 fi
 
 if [ "$os" = "unknown" ]; then
-  echo "Could not detect OS. Please choose manually."
+  error "Could not detect OS. Please choose manually."
   exit 1
 fi
 
-echo "Using OS: $os"
+info "Using OS: $os"
 
-bash ./scripts/sync-bashrc.sh "$os"
-bash ./scripts/sync-gitconfig.sh
+# Shared scripts
+source ./scripts/sync-gitconfig.sh
+
+# Call OS-specific scripts
+if [ "$os" = "linux" ]; then
+  source ./scripts/sync-zshrc.sh
+  source ./scripts/install-omz.sh
+elif [ "$os" = "windows" ]; then
+  source ./scripts/sync-bashrc.sh "$os"
+fi
