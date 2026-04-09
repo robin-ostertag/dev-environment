@@ -115,7 +115,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 # -----------------------------------------------------------
-
+. "$HOME/.local/bin/env"
 
 # Load NVM (Node Version Manager)
 export NVM_DIR="$HOME/.nvm"
