@@ -1,3 +1,19 @@
+# --- BENCHMARK START ---
+# Set to: "quiet" | "info" | "verbose"
+ZSH_STARTUP_MODE="verbose"
+zmodload zsh/datetime
+_start_time=$EPOCHREALTIME
+_last_time=$_start_time
+
+_benchmark() {
+	[[ "$ZSH_STARTUP_MODE" != "verbose" ]] && return
+	local now=$EPOCHREALTIME
+	local elapsed=$(printf "%.1fs" $(( now - _start_time )))
+	local diff=$(printf "%.1fs" $(( now - _last_time )))
+	echo "⏱️  $1: ${elapsed} (+${diff})"
+	_last_time=$now
+}
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -76,13 +92,16 @@ plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
+_benchmark "Before Completions/Compinit"
 
 # load zsh-completions not as a standard plugin but manually
 # this prevents compinit from being called twice and significantly improves startup time
 fpath+=${ZSH_CUSTOM:-${ZSH:-$HOME/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 autoload -U compinit && compinit
+_benchmark "Completions/Compinit"
 
 source $ZSH/oh-my-zsh.sh
+_benchmark "source oh-my-zsh.sh"
 
 # User configuration
 
@@ -114,14 +133,63 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-# -----------------------------------------------------------
+# ------------------------own scripts-----------------------------------
 . "$HOME/.local/bin/env"
-
-# Load NVM (Node Version Manager)
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads NVM
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads NVM bash_completion
+_benchmark "source $HOME/.local/bin/env"
 
 # Dotnet
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+_benchmark "add dotnet to PATH"
+
+# Lazy Load NVM (Node Version Manager)
+# lazy load nvm since it takes about 2.2s in WSL (zsh)
+load_nvm() {
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+    echo "NVM loaded. Current Node version: $(node -v 2>/dev/null || 'none')"
+}
+
+# load nvm when using node-y programs
+nvm() {
+	unset -f nvm
+    unset -f node
+	unset -f npm
+	unset -f npx
+    load_nvm
+    nvm "$@"        # Call nvm executable with the provided arguments
+}
+node() {
+	unset -f nvm
+    unset -f node
+	unset -f npm
+	unset -f npx
+    load_nvm
+    command node "$@"      # Call node executable with the provided arguments
+}
+npm() {
+    unset -f nvm
+    unset -f node
+	unset -f npm
+	unset -f npx
+    load_nvm
+    command npm "$@"       # Call npm executable with the provided arguments
+}
+npx() {
+    unset -f nvm
+    unset -f node
+	unset -f npm
+	unset -f npx
+    load_nvm
+    command npx "$@"       # Call npx executable with the provided arguments
+}
+_benchmark "add functions for lazy loading nvm"
+
+# --- FINAL TOTAL ---
+if [[ "$ZSH_STARTUP_MODE" != "quiet" ]]; then
+	_total_ms=$(printf "%.2f" $(( ($EPOCHREALTIME - _start_time) * 1000 )))
+	echo "✅ ZSH Startup Complete: ${_total_ms}ms"
+fi
+unset -f _benchmark
+unset _start_time _last_time _total_ms
