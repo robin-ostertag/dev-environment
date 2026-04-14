@@ -4,7 +4,8 @@
     "files.exclude": {
         "**/.git": false 
     },
-    // default terminal
+    "editor.fontFamily": "'CommitMono Nerd Font', Consolas, 'Courier New', monospace",
+    // default terminal emulator
     "terminal.integrated.defaultProfile.windows": "Git Bash", 
 
     /* GIT */
