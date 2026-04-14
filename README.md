@@ -2,8 +2,11 @@
 
 ## Linux
 
-Expects zsh and git to be installed.
-Currently using WSL in Windows.
+- Expects zsh and git to be installed.
+- Currently using WSL in Windows.
+
+### Font
+- WSL uses Font from Windows
 
 ### Notes on easy to forget keybinds
 
@@ -11,4 +14,8 @@ Currently using WSL in Windows.
 
 ## Windows
 
-Expects git to be installed.
+- Expects git to be installed.
+
+### Font
+- CommitMono Nerd Font ([https://www.nerdfonts.com/font-downloads](https://www.nerdfonts.com/font-downloads))
+    - extract and add all to Windows Fonts
