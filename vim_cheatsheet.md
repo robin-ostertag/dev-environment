@@ -29,3 +29,9 @@
 *(Displays `@recording` at the bottom when accidentally entered)*
 
 - `q`
+
+## Search
+
+- `/`
+- n: next result
+- shift+n: prev result
