@@ -4,6 +4,7 @@
 
 - Expects zsh and git to be installed.
 - Currently using WSL in Windows.
+- configure zsh theme (p10k): p10k configure
 
 ### Font
 - WSL uses Font from Windows
