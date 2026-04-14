@@ -12,6 +12,7 @@ esac
 
 info "Detected OS: $detected_os"
 
+# let the user override the detected OS
 read -r -p "Use detected OS? (Y/n): " confirm
 
 if [[ "$confirm" =~ ^[Nn]$ ]]; then
@@ -37,6 +38,7 @@ fi
 info "Using OS: $os"
 
 # Shared scripts
+source ./scripts/nvm-v0.40.4-install.sh
 source ./scripts/sync-gitconfig.sh
 
 # Call OS-specific scripts
