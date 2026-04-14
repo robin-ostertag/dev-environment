@@ -45,7 +45,6 @@ source ./scripts/sync-gitconfig.sh
 if [ "$os" = "linux" ]; then
   source ./scripts/sync-zshrc.sh
   source ./scripts/install-omz.sh
-  source ./scripts/dotnet-install.sh
 elif [ "$os" = "windows" ]; then
   source ./scripts/sync-bashrc.sh "$os"
 fi
