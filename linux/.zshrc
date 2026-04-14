@@ -1,12 +1,12 @@
 # --- BENCHMARK START ---
 # Set to: "quiet" | "info" | "verbose"
-ZSH_STARTUP_MODE="verbose"
+BENCHMARK_LOG_MODE="info"
 zmodload zsh/datetime
 _start_time=$EPOCHREALTIME
 _last_time=$_start_time
 
 _benchmark() {
-	[[ "$ZSH_STARTUP_MODE" != "verbose" ]] && return
+	[[ "$BENCHMARK_LOG_MODE" != "verbose" ]] && return
 	local now=$EPOCHREALTIME
 	local elapsed=$(printf "%.1fs" $(( now - _start_time )))
 	local diff=$(printf "%.1fs" $(( now - _last_time )))
@@ -187,7 +187,7 @@ npx() {
 _benchmark "add functions for lazy loading nvm"
 
 # --- FINAL TOTAL ---
-if [[ "$ZSH_STARTUP_MODE" != "quiet" ]]; then
+if [[ "$BENCHMARK_LOG_MODE" != "quiet" ]]; then
 	_total_ms=$(printf "%.2f" $(( ($EPOCHREALTIME - _start_time) * 1000 )))
 	echo "✅ ZSH Startup Complete: ${_total_ms}ms"
 fi
