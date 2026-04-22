@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+source "scripts/utils.sh"
 
 PDE_GITCONFIG="$HOME/dev-environment/.gitconfig"
 

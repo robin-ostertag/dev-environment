@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+source "scripts/utils.sh"
 
 OS="$1"
 

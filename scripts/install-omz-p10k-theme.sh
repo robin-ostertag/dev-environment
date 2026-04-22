@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+source "scripts/utils.sh"
+
 target="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 
 if [ ! -d "$target" ]; then
@@ -8,4 +11,6 @@ else
 	echo "Skipped clone (already exists): $target"
 fi
 
-cp "$HOME/dev-environment/.p10k.zsh" "$HOME/.p10k.zsh"
+cp "$HOME/dev-environment/linux/.p10k.zsh" "$HOME/.p10k.zsh"
+
+success "Installed zsh p10k theme"
