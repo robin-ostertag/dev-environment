@@ -1,0 +1,1 @@
+"$HOME/dev-environment/scripts/dotnet-install_official-script.sh" 

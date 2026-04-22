@@ -26,13 +26,15 @@ run_if_confirmed() {
 # Install dependencies
 
 # --- Shared installations ---
-run_if_confirmed "nvm" "./scripts/nvm-v0.40.4-install.sh"
+run_if_confirmed "nvm" "./scripts/install-nvm-v0.40.4.sh"
+run_if_confirmed ".NET" "./scripts/install-dotnet.sh"
 
 # --- OS-Specific installations ---
 if [ "$os" = "linux" ]; then
     run_if_confirmed "Oh My Zsh" "./scripts/install-omz.sh"
 elif [ "$os" = "windows" ]; then
-    run_if_confirmed "Bashrc Sync" "./scripts/sync-bashrc.sh \"$os\""
+    # TODO
+    error "No install scripts for windows found."
 fi
 
 # sync config files
