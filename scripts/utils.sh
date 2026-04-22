@@ -19,3 +19,15 @@ success() {
 info() {
 	echo -e "${BLUE}[INFO] $*${NC}"
 }
+
+clone_repo() {
+	local url="$1"
+	local target="$2"
+
+	if [ ! -d "$target" ]; then
+		git clone --depth=1 "$url" "$target"
+		echo "Cloned $url"
+	else
+		echo "Skipped clone (already exists): $target"
+	fi
+}

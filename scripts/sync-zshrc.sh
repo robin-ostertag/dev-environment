@@ -2,4 +2,4 @@
 source "scripts/utils.sh"
 
 cp "linux/.zshrc" "$HOME/.zshrc"
-success "Synced .zshrc"
+success "Synced .zshrc" 

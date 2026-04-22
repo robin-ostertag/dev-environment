@@ -1,18 +1,6 @@
 #!/usr/bin/env bash
 source "scripts/utils.sh"
 
-clone_repo() {
-	local url="$1"
-	local target="$2"
-
-	if [ ! -d "$target" ]; then
-		git clone "$url" "$target"
-		echo "Cloned $url"
-	else
-		echo "Skipped clone (already exists): $target"
-	fi
-}
-
 # Default ZSH_CUSTOM if not set
 ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
 

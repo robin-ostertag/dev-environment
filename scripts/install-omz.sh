@@ -11,7 +11,6 @@ else
 fi
 
 # installing plugins
-"$HOME/dev-environment/scripts/install-omz-p10k-theme.sh"
-# installing p10k theme
 "$HOME/dev-environment/scripts/install-omz-plugins.sh"
-
+# installing p10k theme
+"$HOME/dev-environment/scripts/install-omz-p10k-theme.sh"
