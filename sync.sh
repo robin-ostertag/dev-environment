@@ -37,13 +37,13 @@ fi
 info "Using OS: $os"
 
 # Shared scripts
-source ./scripts/nvm-v0.40.4-install.sh
-source ./scripts/sync-gitconfig.sh
+./scripts/nvm-v0.40.4-install.sh
+./scripts/sync-gitconfig.sh
 
 # Call OS-specific scripts
 if [ "$os" = "linux" ]; then
-  bash ./scripts/sync-zshrc.sh
-  bash ./scripts/install-omz.sh
+  ./scripts/sync-zshrc.sh
+  ./scripts/install-omz.sh
 elif [ "$os" = "windows" ]; then
-  source ./scripts/sync-bashrc.sh "$os"
+  ./scripts/sync-bashrc.sh "$os"
 fi
