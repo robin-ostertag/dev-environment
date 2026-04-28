@@ -78,9 +78,36 @@ The cascade is the algorithm for solving conflicts where multiple CSS rules appl
 
 # Inheritence
 
--todo: when is a property inherited?
-- => every property always has a value!
+## How it works
 
+An element get a **computed** value for inheritable properties that represent its parents's value:
+
+1. cascade looks for a value for the element
+2. if not found AND inheritable => inherit **computed** from parent
+3. if not found AND not inheritable => use initial value (from CSS spec)
+
+**Important facet:**  
+the initial value != the computed value 
+
+=> the initial value is never directly inherited
+
+## Initial value
+- every HTML element has **every** CSS property defined by default with an initial value (from the CSS spec).
+- initial value is a property that is not inherited, but is used as default value if the cascade fails to calculate a value
+
+## Inherited properties (examples): 
+  - font properties (line-height, font-size, font-family, color etc.)
+  - text-align
+  - visibility
+
+## Explicit control
+
+Explicitly control via keywords:
+- inherit: inherit from parent (use-case: to create exceptions)
+- initial: use the default value from CSS spec
+- unset: either equal to inherit or initial, depending on if the property is inheritable
+    - special use-case: `p { all: unset }`
+- revert: other styles you wrote (= author layer) don't apply. 
 
 # Sources
 Sources for this document: [https://web.dev/learn/css](https://web.dev/learn/css)
