@@ -109,5 +109,50 @@ Explicitly control via keywords:
     - special use-case: `p { all: unset }`
 - revert: other styles you wrote (= author layer) don't apply. 
 
+
+# Sizing Units
+
+- dimension = number + unit (unit = dimension token)
+- length = dimension that refers to distance (absolute or relative)
+
+## Absolute lengths
+
+- cm: Centimeters
+- mm: Millimeters
+- px: Pixels
+
+Physical lengths (cm, mm) are for styling print content.
+They will not reliably display at those sizes on screens due to variations in pixel sizes.
+
+## Relative lengths
+
+### Font-size-relative units
+
+| unit  | relative to:  |
+|---|---|
+| em  | font size (of parent) (height of the letter `M`)  |
+| rem | font size of the root element (default: **16px**)  |
+| ch | average character advance (narrow glyph) (width of `0` char) |
+| ic | average character advance (full width glyph) (width of `水` char) |
+| cap | height of capital letters |
+
+All font-size-relative units can be prefixed with `r` to be relative to the root element (like `em` and `rem`).
+
+### Viewport-relative units
+
+| unit  | relative to:  |
+|---|---|
+| vw | 1% of viewport's width. |
+| vh | 1% of viewport's height. (use for arranging ui, e.g. footer) |
+
+
+# Layout
+
+## Display Property
+
+- inline: ignores explicit width and height. Also ignores margin + padding.
+- block: will expand to the size of the inline dimension (span full horizontal width)
+
+
 # Sources
 Sources for this document: [https://web.dev/learn/css](https://web.dev/learn/css)
