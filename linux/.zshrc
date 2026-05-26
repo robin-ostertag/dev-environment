@@ -193,6 +193,8 @@ npx() {
 }
 _benchmark "add functions for lazy loading nvm"
 
+[[ -f "$HOME/.zshrc-local.sh" ]] && source "$HOME/.zshrc-local.sh"
+
 # --- FINAL TOTAL ---
 if [[ "$BENCHMARK_LOG_MODE" != "quiet" ]]; then
 	_total_ms=$(printf "%.2f" $(( ($EPOCHREALTIME - _start_time) * 1000 )))
@@ -202,4 +204,4 @@ unset -f _benchmark
 unset _start_time _last_time _total_ms
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
