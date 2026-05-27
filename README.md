@@ -3,7 +3,7 @@
 ## Linux
 
 - Expects zsh and git to be installed.
-- Currently using WSL in Windows.
+- Currently using WSL in Windows (Ubuntu).
 - configure zsh theme (p10k): p10k configure
 
 ### Font
