@@ -6,6 +6,7 @@ source "scripts/detect_os.sh"
 
 # Shared scripts
 ./scripts/sync-gitconfig.sh
+./scripts/sync-git-foreach-repo.sh
 
 # Call OS-specific scripts
 if [ "$os" = "linux" ]; then

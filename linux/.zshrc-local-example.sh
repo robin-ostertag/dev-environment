@@ -25,11 +25,14 @@ exampleFunctionName() {
 	elif [[ "$cmd" == "clone" ]]; then
 		shift
 		git clone --config credential.helper=\"store\" "$@"
+	elif [[ "$cmd" == "foreach-repo" ]]; then
+		shift
+		"$HOME/foreach-repo.sh" "$@"
 	else
 		[[ -n "$cmd" ]] && echo "unknown command '$cmd'"
-		echo "Available commands: build, cd, clone"
+		echo "Available commands: build, cd, clone, foreach-repo, secret"
 		return 1
 	fi
 }
 # tab completion
-complete -W "build cd code secret clone" exampleFunctionName
+complete -W "build cd code clone foreach-repo secret" exampleFunctionName
