@@ -9,7 +9,7 @@ else
     # Auto-detect OS
     case "$(uname -s)" in
       Linux*)     detected_os="linux" ;;
-      Darwin*)    detected_os="linux" ;; 
+      Darwin*)    detected_os="macos" ;; 
       CYGWIN*|MINGW*|MSYS*) detected_os="windows" ;;
       *)          detected_os="unknown" ;;
     esac

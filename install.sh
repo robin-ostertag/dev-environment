@@ -31,6 +31,7 @@ run_if_confirmed ".NET" "./scripts/install-dotnet.sh"
 
 # --- OS-Specific installations ---
 if [ "$os" = "linux" ]; then
+    run_if_confirmed "Build Neovim (nvim) from source" "./scripts/build-nvim-from-source.sh"
     run_if_confirmed "Apt installs" "./scripts/install-apt.sh"
     run_if_confirmed "Oh My Zsh" "./scripts/install-omz.sh"
 elif [ "$os" = "windows" ]; then
