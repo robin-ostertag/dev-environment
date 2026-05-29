@@ -34,6 +34,12 @@ export ZSH="$HOME/.oh-my-zsh"
 #ZSH_THEME="avit"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+# spaceship theme did not work properly
+#ZSH_THEME="spaceship"
+
+# spaceship remove async
+#SPACESHIP_PROMPT_ASYNC=false
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
