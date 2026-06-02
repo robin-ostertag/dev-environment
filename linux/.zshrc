@@ -145,6 +145,12 @@ _benchmark "source oh-my-zsh.sh"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gss='git status --short --untracked-files=all'
+alias gpl='git pull'
+
+# override the defaults from the omz git plugin:
+alias gpf='git push --force-with-lease' # exlude flag: --force-if-includes
+alias gl='git log -7 --graph --pretty=format:"%C(auto)%h%d%Creset %s %C(green)%cn%Creset %C(cyan)(%cr)%Creset"'
+alias gss='git status --short --untracked-files=all'
 
 
 # ------------------------own scripts-----------------------------------
