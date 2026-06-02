@@ -144,6 +144,7 @@ _benchmark "source oh-my-zsh.sh"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias gss='git status --short --untracked-files=all'
 
 
 # ------------------------own scripts-----------------------------------
@@ -198,6 +199,13 @@ npx() {
     command npx "$@"       # Call npx executable with the provided arguments
 }
 _benchmark "add functions for lazy loading nvm"
+
+# find history (fzf a history cmd and select it for prompt editing and fire it off)
+fh() {
+	local choice
+	choice=$(cut -d';' -f2 "$HISTFILE" | sort -u | uniq | grep '..........' | fzf)
+	print -z "$choice"
+}
 
 [[ -f "$HOME/.zshrc-local.sh" ]] && source "$HOME/.zshrc-local.sh"
 
