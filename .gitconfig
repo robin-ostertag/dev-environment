@@ -44,3 +44,4 @@
 	skipped = !git ls-files -v | grep \"^S\"
 	skip = update-index --skip-worktree
 	no-skip = update-index --no-skip-worktree
+	rsh1 = "!git reset --soft HEAD~1"
