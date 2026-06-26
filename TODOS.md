@@ -1,4 +1,6 @@
 # TODOs
+- use Variable for folder path
+- remove option to override os detection
 - dotnet install script: check if already installed => then skip
 - dotnet install script: prompt for dotnet version and runtime to install: https://learn.microsoft.com/en-us/dotnet/core/install/linux-scripted-manual#scripted-install
 - add dotnet windows install script: https://learn.microsoft.com/en-us/dotnet/core/install/windows#install-with-powershell

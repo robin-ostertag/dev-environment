@@ -160,6 +160,7 @@ _benchmark "source $HOME/.local/bin/env"
 # Dotnet
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
+export SSL_CERT_DIR="$HOME/.aspnet/dev-certs/trust:/usr/lib/ssl/certs"
 _benchmark "add dotnet to PATH"
 
 # Lazy Load NVM (Node Version Manager)
