@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-sudo apt install -y fzf fd-find
+sudo apt install -y fzf fd-find shfmt shellcheck
