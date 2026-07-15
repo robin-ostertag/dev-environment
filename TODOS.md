@@ -1,5 +1,6 @@
 # TODOs
 - use Variable for folder path
+- move scripts to bin and remove .sh file extension (not all scripts, just the ones used as "program" in terminal)
 - remove option to override os detection
 - dotnet install script: check if already installed => then skip
 - dotnet install script: prompt for dotnet version and runtime to install: https://learn.microsoft.com/en-us/dotnet/core/install/linux-scripted-manual#scripted-install
@@ -9,4 +10,3 @@
      => profiles are stored in `%APPDATA%\Code\User\profiles` (Windows) and `$HOME/.config/Code/User/profiles` (Linux)
 - vscode: add profiles with extensions
 - use shared script to lazy load nvm
-- nvm lazy load command pass through not working in zsh: [https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm)

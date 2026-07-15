@@ -100,10 +100,14 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
+# lazy load nvm
+zstyle ':omz:plugins:nvm' lazy yes
 plugins=(
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
+	nvm
 )
 _benchmark "Before Completions/Compinit"
 
@@ -163,50 +167,6 @@ export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 export SSL_CERT_DIR="$HOME/.aspnet/dev-certs/trust:/usr/lib/ssl/certs"
 _benchmark "add dotnet to PATH"
 
-# Lazy Load NVM (Node Version Manager)
-# lazy load nvm since it takes about 2.2s in WSL (zsh)
-load_nvm() {
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-    echo "NVM loaded. Current Node version: $(node -v 2>/dev/null || 'none')"
-}
-
-# load nvm when using node-y programs
-nvm() {
-	unset -f nvm
-    unset -f node
-	unset -f npm
-	unset -f npx
-    load_nvm
-    nvm "$@"        # Call nvm executable with the provided arguments
-}
-node() {
-	unset -f nvm
-    unset -f node
-	unset -f npm
-	unset -f npx
-    load_nvm
-    command node "$@"      # Call node executable with the provided arguments
-}
-npm() {
-    unset -f nvm
-    unset -f node
-	unset -f npm
-	unset -f npx
-    load_nvm
-    command npm "$@"       # Call npm executable with the provided arguments
-}
-npx() {
-    unset -f nvm
-    unset -f node
-	unset -f npm
-	unset -f npx
-    load_nvm
-    command npx "$@"       # Call npx executable with the provided arguments
-}
-_benchmark "add functions for lazy loading nvm"
-
 # find history (fzf a history cmd and select it for prompt editing and fire it off)
 fh() {
 	local choice
@@ -215,6 +175,10 @@ fh() {
 }
 
 [[ -f "$HOME/.zshrc-local.sh" ]] && source "$HOME/.zshrc-local.sh"
+[[ -f "$HOME/dev-environment/linux/.ro.sh" ]] && source "$HOME/dev-environment/linux/.ro.sh"
+
+# add bin folder to path
+export PATH=$PATH:$HOME/dev-environment/bin
 
 # --- FINAL TOTAL ---
 if [[ "$BENCHMARK_LOG_MODE" != "quiet" ]]; then
