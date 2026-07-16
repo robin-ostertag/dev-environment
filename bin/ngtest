@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash 
+
 set -euo pipefail
 
 # Configuration
@@ -53,8 +54,10 @@ touch "$HISTORY_FILE"
 # --- File Discovery ---
 # Get all spec/test files, relative to current dir
 mapfile -t ALL_SPECS < <(find . -type f \( -name "*.spec.ts" -o -name "*.test.ts" \) -not -path "*/node_modules/*" | sed 's|^\./||')
+# Zsh alternative to mapfile
+# ALL_SPECS=( ${(f)"$(find . -type f \( -name "*.spec.ts" -o -name "*.test.ts" \) -not -path "*/node_modules/*" | sed 's|^\./||')"} )
 
-if [ ${#ALL_SPECS[@]} -eq 0 ]; then
+if [ ${#ALL_SPECS} -eq 0 ]; then
 	echo "No spec files found."
 	exit 1
 fi
