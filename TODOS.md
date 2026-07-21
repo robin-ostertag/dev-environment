@@ -8,5 +8,5 @@
 - sync script for vscode files: copy vscode files to user profile (maybe append)
     - https://code.visualstudio.com/docs/configure/profiles#_where-are-profiles-kept
      => profiles are stored in `%APPDATA%\Code\User\profiles` (Windows) and `$HOME/.config/Code/User/profiles` (Linux)
+- also export script for vscode profiles and settings (maybe, also maybe not since i do not want all settings to be saved)
 - vscode: add profiles with extensions
-- use shared script to lazy load nvm
