@@ -95,4 +95,4 @@ echo "--------------------------------------"
 npx ng test \
 	--browsers "$BROWSER" \
 	--watch "$WATCH_MODE" \
-	$INCLUDE_FLAGS
+	$INCLUDE_FLAGS < /dev/null
