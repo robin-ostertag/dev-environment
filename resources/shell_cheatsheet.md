@@ -5,3 +5,4 @@
 - `fg`: return to default background task
     - `fg %2`: return a specific background job back to foregorund
 - `jobs`: list background jobs
+- `kill %1`: terminates the job with job-id 1
