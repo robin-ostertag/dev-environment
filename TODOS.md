@@ -10,3 +10,7 @@
      => profiles are stored in `%APPDATA%\Code\User\profiles` (Windows) and `$HOME/.config/Code/User/profiles` (Linux)
 - also export script for vscode profiles and settings (maybe, also maybe not since i do not want all settings to be saved)
 - vscode: add profiles with extensions
+- remove aliases from gitconfig that already exist in omz git plugin aliases
+
+vim:
+- change escape and caps lock
