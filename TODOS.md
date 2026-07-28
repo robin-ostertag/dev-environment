@@ -12,5 +12,6 @@
 - vscode: add profiles with extensions
 - remove aliases from gitconfig that already exist in omz git plugin aliases
 
-vim:
+vim/nvim:
 - change escape and caps lock
+- configure copy/paste from/to system clipboard
