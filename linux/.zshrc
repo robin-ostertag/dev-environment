@@ -180,6 +180,9 @@ fh() {
 # add bin folder to path
 export PATH=$PATH:$HOME/dev-environment/bin
 
+# add brew to path
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 # --- FINAL TOTAL ---
 if [[ "$BENCHMARK_LOG_MODE" != "quiet" ]]; then
 	_total_ms=$(printf "%.2f" $(( ($EPOCHREALTIME - _start_time) * 1000 )))
