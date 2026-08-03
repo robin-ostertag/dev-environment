@@ -36,6 +36,8 @@
 ### Basic Movement
 
 * `h`, `j`, `k`, `l` – Left, Down, Up, Right (think of `j` as looking down like a hook, and `k` as "up")
+* `STRG-u`: Scroll windows up (half a page)
+* `STRG-d`: Scroll windows down (half a page)
 
 ### Word Movement
 

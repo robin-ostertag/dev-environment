@@ -12,6 +12,7 @@ source "scripts/detect_os.sh"
 if [ "$os" = "linux" ]; then
   ./scripts/sync-zshrc.sh
   ./scripts/sync-p10k_zsh.sh
+  ./scripts/sync-nvim-config.sh
 elif [ "$os" = "windows" ]; then
   ./scripts/sync-bashrc.sh "$os"
 fi
