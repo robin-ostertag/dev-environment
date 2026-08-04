@@ -179,6 +179,7 @@ fh() {
 
 # add bin folder to path
 export PATH=$PATH:$HOME/dev-environment/bin
+export DEV_ENV="$HOME/dev-environment"
 
 # add brew to path
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

@@ -1,5 +1,6 @@
 # TODOs
 - use Variable for folder path
+- Use ROBINO_NVIM_GIT_REF variable in nvim script
 - move scripts to bin and remove .sh file extension (not all scripts, just the ones used as "program" in terminal)
 - remove option to override os detection
 - dotnet install script: check if already installed => then skip
