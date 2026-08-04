@@ -12,7 +12,7 @@
     "git.confirmSync": false,
     "git.autofetch": false,
     
-    /* Remove b from neovim extension keys to allow CTRL-b vscode shortcut to work */
+    /* Remove b&w from neovim extension keys to allow CTRL-b & CTRL-w vscode shortcut to work */
     "vscode-neovim.ctrlKeysForNormalMode": [
     "a",
     "c",
@@ -30,7 +30,6 @@
     "t",
     "u",
     "v",
-    "w",
     "x",
     "y",
     "z",
