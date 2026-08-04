@@ -41,6 +41,8 @@
 * `zz`: center cursor (`zt`, `zb` for top, bottom)
 * `C-o`: go to previous cursor pos
 * `C-i`: go to next cursor pos (like undo/redo)
+* `gc`: Reselect previous selection
+* `SHIFT-j`: Move next line to the end of current line
 
 ### Word Movement
 

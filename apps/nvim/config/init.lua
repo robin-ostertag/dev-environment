@@ -1,5 +1,6 @@
-vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Move half page up while keeping cursor centered" })
-vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Move half page down while keeping cursor centered" })
+vim.g.mapleader = " "
+
+require("keymaps")
 
  --  See `:help vim.hl.on_yank()`
 vim.api.nvim_create_autocmd("TextYankPost", {
