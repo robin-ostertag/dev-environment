@@ -43,6 +43,7 @@
 * `C-i`: go to next cursor pos (like undo/redo)
 * `gc`: Reselect previous selection
 * `SHIFT-j`: Move next line to the end of current line
+* `%` jump between opening/closing bracket
 
 ### Word Movement
 
