@@ -4,5 +4,5 @@ set -euo pipefail
 source "$DEV_ENV/scripts/utils.sh"
 
 mkdir -p "$HOME/.config/nvim"
-cp -r "$DEV_ENV/apps/nvim/config/" "$HOME/.config/nvim/"
+cp -r "$DEV_ENV/apps/nvim/config/." "$HOME/.config/nvim/"
 success "Synced nvim config" 
