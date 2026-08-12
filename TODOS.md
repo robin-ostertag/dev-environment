@@ -1,5 +1,8 @@
 # TODOs
 - use Variable for folder path
+- add bin cmd to navigate to this directory (e.g. rrz for cd $HOME/$DEV_ENV)
+- rename $DEV_ENV to $ROBINO_ROOT
+- move scripts from scripts folder to apps/lib/bin/helpers
 - remove run if confirmed
 - move scripts to bin and remove .sh file extension (not all scripts, just the ones used as "program" in terminal)
 - remove option to override os detection
@@ -12,9 +15,6 @@
 - also export script for vscode profiles and settings (maybe, also maybe not since i do not want all settings to be saved)
 - vscode: add profiles with extensions
 - remove aliases from gitconfig that already exist in omz git plugin aliases
-
-vim/nvim:
-- configure copy/paste from/to system clipboard
 
 test config:
 - initial install in docker
