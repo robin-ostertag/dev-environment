@@ -81,6 +81,8 @@
 * `0` – Move to the absolute beginning of the line (column 1)
 * `^` – Move to the first **non-blank** character of the line
 * `$` – Move to the end of the line
+* `f` - Forward (inclusive)
+* `t` - Forward (exclusive) => use like this: `dt]` => deletes everything until `]`
 
 ## Powerful Combos (Operator + Motion/Text Object)
 
