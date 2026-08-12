@@ -1,6 +1,6 @@
 # TODOs
 - use Variable for folder path
-- Use ROBINO_NVIM_GIT_REF variable in nvim script
+- remove run if confirmed
 - move scripts to bin and remove .sh file extension (not all scripts, just the ones used as "program" in terminal)
 - remove option to override os detection
 - dotnet install script: check if already installed => then skip
@@ -14,5 +14,7 @@
 - remove aliases from gitconfig that already exist in omz git plugin aliases
 
 vim/nvim:
-- change escape and caps lock
 - configure copy/paste from/to system clipboard
+
+test config:
+- initial install in docker
