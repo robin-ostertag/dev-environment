@@ -3,7 +3,6 @@
 ## Linux
 
 - Expects zsh and git to be installed.
-- Currently using WSL in Windows (Ubuntu).
 - configure zsh theme (p10k): p10k configure
 
 ### Font
@@ -12,10 +11,6 @@
 ### Notes on easy to forget keybinds
 
 `CTRL+e` will acception zsh-autosuggestions
-
-## Windows
-
-- Expects git to be installed.
 
 ### Font
 - CommitMono Nerd Font ([https://www.nerdfonts.com/font-downloads](https://www.nerdfonts.com/font-downloads))
