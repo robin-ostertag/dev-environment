@@ -13,7 +13,7 @@ ROBINO_NVIM_GIT_FETCH="${ROBINO_NVIM_GIT_FETCH:-no}"
 
 function build_nvim() {
 	info "Starting build process..."
-	make CMAKE_BUILD_TYPE=RelWithDebverbose
+	make CMAKE_BUILD_TYPE=Release
 
 	info "Installing Neovim..."
 	sudo make install
