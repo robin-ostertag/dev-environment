@@ -39,8 +39,8 @@ function m.setup()
 
   -- delete into void, than paste (default: deleted text gets written into register)
   vim.keymap.set("x", "<leader>p", '"_dP') -- read like this: "register into _void PPaste before cursor
-  vim.keymap.set("n", "<leader>d", '"_d') -- delete into void register
-  vim.keymap.set("v", "<leader>d", '"_d') -- delete into void register
+  vim.keymap.set("n", "<leader>d", '"_d')  -- delete into void register
+  vim.keymap.set("v", "<leader>d", '"_d')  -- delete into void register
 
   local substitute_word_under_cusor = [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]]
   vim.keymap.set("n", "<leader>st", substitute_word_under_cusor, { desc = "rename/substitute for word under cursor" })
@@ -66,6 +66,9 @@ function m.setup()
     print("filepath copied to clipboard:" .. filepath)
   end
   vim.keymap.set("n", "<leader>fp", copy_filepath_to_clipboard, { desc = "copy filepath to clipboard" })
+
+  local convert_line_endings_to_unix = ":e ++ff=dos<CR>:w<CR>:set ff=unix<CR>:w<CR>:e<CR>"
+  vim.keymap.set("n", "<leader><leader>u", convert_line_endings_to_unix, { desc = "convert dos to uunix" })
 end
 
 return m
