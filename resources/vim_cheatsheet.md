@@ -98,6 +98,4 @@
 
 ## Macros (Recording Mode)
 
-*(If you accidentally trigger this, don't panic)*
-
 * `q` – Stop recording a macro (displays `@recording` at the bottom when active)
