@@ -69,6 +69,11 @@ function m.setup()
 
   local convert_line_endings_to_unix = ":e ++ff=dos<CR>:w<CR>:set ff=unix<CR>:w<CR>:e<CR>"
   vim.keymap.set("n", "<leader><leader>u", convert_line_endings_to_unix, { desc = "convert dos to uunix" })
+
+  vim.keymap.set("n", "<leader>cn", function()
+    vim.cmd("cd ~/.config/nvim/")
+    vim.cmd("Explore")
+  end, { desc = "convert dos to uunix" })
 end
 
 return m
