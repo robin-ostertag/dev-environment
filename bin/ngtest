@@ -39,6 +39,11 @@ while [[ $# -gt 0 ]]; do
 		WATCH_MODE=false
 		shift
 		;;
+	-*)
+		# Pass any unknown options (e.g., --coverage) to extra args
+		EXTRA_ARGS+=("$1")
+		shift
+		;;
 	*)
 		QUERY="$1"
 		shift
@@ -79,7 +84,14 @@ fi
 
 # --- Formatting the flags ---
 # Prepend --include to each selected file
-INCLUDE_FLAGS=$(echo "$FZF_OUT" | sed 's|^|--include |' | tr '\n' ' ')
+# INCLUDE_FLAGS=$(echo "$FZF_OUT" | sed 's|^|--include |' | tr '\n' ' ')
+
+# --- Formatting the flags ---
+mapfile -t SELECTED_FILES <<< "$FZF_OUT"
+INCLUDE_FLAGS=()
+for file in "${SELECTED_FILES[@]}"; do
+	INCLUDE_FLAGS+=("--include" "$file")
+done
 
 # Strip paths and all suffixes (e.g., path/file.spec.ts -> file)
 # BASENAMES=$(echo "$FZF_OUT" | sed 's|.*/||; s|\..*||' | paste -sd ", " -)
@@ -91,16 +103,22 @@ echo "▶ Running Angular specs"
 echo "  Files: ${BASENAMES}"
 echo "--------------------------------------"
 
+# Build execution command array safely
+CMD=(npx ng test)
+
 if [ -n "$BROWSER" ]; then
-	exec npx ng test \
-		--browsers "$BROWSER" \
-		--watch "$WATCH_MODE" \
-		$INCLUDE_FLAGS </dev/null
-else
-	exec npx ng test \
-		--watch "$WATCH_MODE" \
-		$INCLUDE_FLAGS </dev/null
+	CMD+=("--browsers" "$BROWSER")
 fi
+
+CMD+=("--watch" "$WATCH_MODE")
+CMD+=("${INCLUDE_FLAGS[@]}")
+
+# Append any extra flags passed directly by the user
+if [[ ${EXTRA_ARGS+x} && ${#EXTRA_ARGS[@]} -gt 0 ]]; then
+	CMD+=("${EXTRA_ARGS[@]}")
+fi
+
+exec "${CMD[@]}" </dev/null
 
 # INFO: the pipe indirection prevents the pipefail from triggering causing the process to become unresponsive
 # $INCLUDE_FLAGS </dev/null
