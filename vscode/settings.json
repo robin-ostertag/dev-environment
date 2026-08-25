@@ -1,19 +1,24 @@
 {
-    /* VSCODE */
-    // show .git folder
-    "files.exclude": {
-        "**/.git": false 
-    },
-    "editor.fontFamily": "'CommitMono Nerd Font', Consolas, 'Courier New', monospace",
-    // default terminal emulator
-    "terminal.integrated.defaultProfile.windows": "Git Bash", 
-
-    /* GIT */
-    "git.confirmSync": false,
-    "git.autofetch": false,
-    
-    /* Remove b&w from neovim extension keys to allow CTRL-b & CTRL-w vscode shortcut to work */
-    "vscode-neovim.ctrlKeysForNormalMode": [
+  /* VSCODE */
+  // show .git folder
+  "files.exclude": {
+    "**/.git": false
+  },
+  "editor.fontFamily": "'CommitMono Nerd Font', Consolas, 'Courier New', monospace",
+  // default terminal emulator
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.automationProfile.linux": {
+    "path": "/usr/bin/zsh",
+    "args": [
+      "-i"
+    ]
+  },
+  "editor.linkedEditing": true,
+  /* GIT */
+  "git.confirmSync": false,
+  "git.autofetch": false,
+  /* Remove b&w from neovim extension keys to allow CTRL-b & CTRL-w vscode shortcut to work */
+  "vscode-neovim.ctrlKeysForNormalMode": [
     "a",
     "c",
     "d",
