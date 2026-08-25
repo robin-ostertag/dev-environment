@@ -3,11 +3,10 @@
 set -euo pipefail
 
 # Configuration
-#TODO: change for my repo
-CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/ribyns-env"
-HISTORY_FILE="$CACHE_DIR/ng_test_fzf_history"
-BROWSER="chromiumheadless"
+BROWSER=""
 WATCH_MODE=true
+CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/robino"
+HISTORY_FILE="$CACHE_DIR/ng_test_fzf_history"
 
 show_help() {
 	echo "Usage: $(basename "$0") [QUERY] [OPTIONS]"
@@ -33,7 +32,7 @@ while [[ $# -gt 0 ]]; do
 		shift 2
 		;;
 	--karma)
-		BROWSER="ChromeHeadless"
+		BROWSER="chromiumheadless"
 		shift
 		;;
 	--no-watch)
