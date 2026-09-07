@@ -164,7 +164,15 @@ _benchmark "source $HOME/.local/bin/env"
 # Dotnet
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
-export SSL_CERT_DIR="$HOME/.aspnet/dev-certs/trust:/usr/lib/ssl/certs"
+
+# TODO: test if these two lines are needed
+export DOTNET_ROOT_CERTIFICATE_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+export SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+
+# Dotnet app couldn't connect to external services from homeoffice
+# Did only occur from homeoffice. TODO: test from office
+export DOTNET_SYSTEM_NET_DISABLEIPV6=1
+
 _benchmark "add dotnet to PATH"
 
 # find history (fzf a history cmd and select it for prompt editing and fire it off)
