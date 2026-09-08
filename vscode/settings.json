@@ -5,6 +5,9 @@
     "**/.git": false
   },
   "editor.fontFamily": "'CommitMono Nerd Font', Consolas, 'Courier New', monospace",
+  // for HTML tag editing (opening & closing tag at the same time)
+  "editor.linkedEditing": true,
+  "editor.minimap.enabled": false,
   // default terminal emulator
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.automationProfile.linux": {
@@ -13,13 +16,16 @@
       "-i"
     ]
   },
-  "editor.linkedEditing": true,
+  "workbench.settings.applyToAllProfiles": [
+    "chat.disableAIFeatures"
+  ],
   /* GIT */
   "git.confirmSync": false,
   "git.autofetch": false,
   /* Remove b&w from neovim extension keys to allow CTRL-b & CTRL-w vscode shortcut to work */
   "vscode-neovim.ctrlKeysForNormalMode": [
     "a",
+    // "b",
     "c",
     "d",
     "e",
@@ -35,6 +41,7 @@
     "t",
     "u",
     "v",
+    // "w",
     "x",
     "y",
     "z",
