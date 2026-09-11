@@ -10,8 +10,7 @@ source "scripts/detect_os.sh"
 
 # Call OS-specific scripts
 if [ "$os" = "linux" ]; then
-  ./scripts/sync-zshrc.sh
-  ./scripts/sync-p10k_zsh.sh
+  "$DEV_ENV/apps/zsh/sync.sh"
   "$DEV_ENV/apps/nvim/sync.sh"
 elif [ "$os" = "windows" ]; then
   ./scripts/sync-bashrc.sh "$os"
