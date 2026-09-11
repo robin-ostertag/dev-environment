@@ -1,4 +1,4 @@
-A collection of my favourite resources.
+A collection of my favourite resources and resources i plan to read.
 
 # Books
 
